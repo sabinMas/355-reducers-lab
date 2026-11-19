@@ -1,6 +1,8 @@
 import { PHOTOS } from "../photos.js";
+import { useEditor } from "../context/EditorContext.jsx";
 
-function Preview({ editor }) {
+function Preview () {
+  const { editor } = useEditor();
   const photo = PHOTOS.find((p) => p.id === editor.photo);
   const sideways = editor.rotation === 90 || editor.rotation === 270;
 
